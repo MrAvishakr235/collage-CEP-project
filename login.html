@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Management Portal Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="login-page">
+  <main id="main-content" class="login-layout">
+    <section class="school-introduction" aria-labelledby="school-name">
+      <div class="school-logo-placeholder" role="img" aria-label="School logo placeholder" data-placeholder="school-logo">School Logo</div>
+      <p class="eyebrow">Community Engaging Project Prototype</p>
+      <h1 id="school-name" data-school-name="placeholder">School Name Placeholder</h1>
+      <p>Digital attendance and assessment management for a practical, connected school workflow.</p>
+    </section>
+
+    <section class="login-panel" aria-labelledby="login-heading">
+      <h2 id="login-heading">Sign in to the portal</h2>
+      <p>Use your school-provided login details. Authentication will be connected in a later stage.</p>
+      <form id="login-form" class="auth-form" action="teacher-dashboard.html" method="get" data-api-endpoint="/login">
+        <fieldset>
+          <legend>Select your access type</legend>
+          <label><input type="radio" name="role" value="teacher" checked data-role="teacher"> Teacher / Class Teacher</label>
+          <label><input type="radio" name="role" value="admin" data-role="admin"> Principal / Administration</label>
+        </fieldset>
+        <p>
+          <label for="login-id">Login ID</label>
+          <input id="login-id" name="login_id" type="text" autocomplete="username" placeholder="Enter your login ID" required>
+        </p>
+        <p>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+        </p>
+        <button id="login-submit" type="submit" data-action="login">Log in</button>
+      </form>
+      <p><a id="forgot-password-link" href="reset-password.html">Forgot password?</a></p>
+      <p class="prototype-note">Prototype only: your future Flask authentication will replace this sample form action.</p>
+    </section>
+  </main>
+</body>
+</html>
